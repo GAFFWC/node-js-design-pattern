@@ -15,6 +15,7 @@ class ReplaceStream extends stream.Transform {
         this.tailPiece = "";
     }
 
+    // transform() 함수와 더불어 스트림의 함수들은 데이터 순서를 위해 순차적으로 실행된다. (callback이 실행되어 완료될 때 까지)
     _transform(chunk, encoding, callback) {
         // 찾을 문자열 기준으로 잘라서 배열(piece)에 저장
         // 기존에 tailPiece가 있었다면 앞에 붙여줌
